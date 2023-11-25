@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Head Elements (like linking CSS file) -->
+</head>
+
+<body>
+    <header>
+        <div class="site-title">Your Site Title</div>
+        <nav>
+            <!-- Navigation Menu -->
+        </nav>
+    </header>
+
+    <div class="hero-image">
+        <!-- Hero Image -->
+    </div>
+
+    <main>
+        <% for (var i=0; i < page.posts.length; i++) { %>
+            <article>
+                <img src="<%- url_for(page.posts[i].thumbnail) %>" alt="<%- page.posts[i].title %>">
+                <h2><a href="<%- page.posts[i].path %>"><%- page.posts[i].title %></a></h2>
+                <p><%- page.posts[i].excerpt %></p>
+            </article>
+            <% } %>
+    </main>
+
+    <% if (config.sidebar && config.sidebar !=='bottom' ) { %>
+        <aside>
+            <!-- Sidebar Content like categories, recent posts, search bar -->
+        </aside>
+        <% } %>
+
+            <footer>
+                <a href="your-portfolio-link">Portfolio</a> |
+                <a href="your-github-link">GitHub</a> |
+                <a href="your-linkedin-link">LinkedIn</a>
+            </footer>
+</body>
+
+</html>
